@@ -1,13 +1,13 @@
 import json
 import datetime
 
-with open('data.json',  encoding="utf8") as json_file:
+with open('data.json',  encoding="utf8") as json_file: #input json file 
     data = json.load(json_file)
 
 bodyFrom = data['body']
 
 def changeSecond(second):
-    fromRoot = str(datetime.timedelta(seconds=second)) #set
+    fromRoot = str(datetime.timedelta(seconds=second))  
     fromRootAddZero = '0' + fromRoot[0:11]
     fromRootFinal = fromRootAddZero.replace(".",",")
     if ',' not in fromRootFinal:
@@ -28,7 +28,7 @@ for item in bodyFrom:
         "content":item['content']
     })
 
-with open('final.srt','w',encoding="utf8") as file:
+with open('final.srt','w',encoding="utf8") as file: #output srt file
    print('Mở file SRT thành công') 
    for item in listObject:
         file.write(f"{item['locate']}\n")
