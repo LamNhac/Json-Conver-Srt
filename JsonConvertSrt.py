@@ -1,7 +1,6 @@
 import json
 import datetime
 
-
 with open('data.json',  encoding="utf8") as json_file:
     data = json.load(json_file)
 
